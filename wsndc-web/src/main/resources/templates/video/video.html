@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>KoolTube</title>
+	
+	
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+	<!-- //Custom Theme files --> 
+
+<!-- //js -->
+<!-- web-fonts -->   
+<link href="http://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
+<link href="http://fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
+
+	
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/Recipe/static/assert3/css/bootstrap.min.css"  type="text/css">
+	
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="/Recipe/static/assert3/css/style.css">
+	<!-- Owl Carousel Assets -->
+    <link href="/Recipe/static/assert3/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="/Recipe/static/assert3/owl-carousel/owl.theme.css" rel="stylesheet">
+
+	<!-- Custom Fonts -->
+    <!--<link rel="stylesheet" href="/static/assert3/css/font-awesome.min.css" type="text/css">-->
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- jQuery -->
+	<script src="/Recipe/static/assert3/js/jquery-2.1.1.js"></script>
+	
+	<!-- Core JavaScript Files -->  	 
+    <script src="/Recipe/static/assert3/js/bootstrap.min.js"></script>
+	
+</head>
+
+<body>
+<header>
+	<!--Top-->
+	<nav style="background: url(../../static/assert2/images/1.jpg) no-repeat center">
+	<div  style="background: rgba(64, 68, 105, 0.54);padding:  0.8em 0;">
+	
+			<div class="container" >
+			<div class="row">
+				
+		<div class="w3ls-header-left">
+						<p>开始你的美食之旅</p>
+			</div>
+					<div class="w3ls-header-right">
+						<ul> 
+							<li class="head-dpdn" style="color: #fff;">
+								<i class="fa fa-phone" aria-hidden="true" ></i> 联系我们: 13556510364 
+							</li> 
+							<li class="head-dpdn">
+								<a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> 登录</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> 注册</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i> 帮助</a>
+							</li>
+						</ul>
+					</div>
+			</div>
+	</div>
+	</div>
+	<!--Navigation-->
+
+	<div class="navbar navbar-default" style="background: rgba(253, 70, 62, 0.84);">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header w3l_logo">
+							<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>  
+							<h1><a href="/Recipe/index.html">我是你的"菜"<span>极致的美食体验</span></a></h1>
+						</div> 
+						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="/Recipe/index.html" class="active">主页</a></li>
+								<!-- Mega Menu -->
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">菜谱大全 <b class="caret"></b></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<div class="row">
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>一日三餐</h6>  
+													<li><a href="menu.html">早餐</a></li> 
+													<li><a href="menu.html">午餐</a></li> 
+													<li><a href="menu.html">晚餐</a></li>
+													<li><a href="menu.html">下午茶</a></li> 
+													<li><a href="menu.html">宵夜</a></li> 
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>八大菜系</h6> 
+													
+													<li><a href="menu.html">鲁菜</a></li> 
+													<li><a href="menu.html">川菜</a></li> 
+													<li><a href="menu.html">粤菜</a></li> 
+													<li><a href="menu.html">闽菜</a></li>
+													<li><a href="menu.html">苏菜</a></li> 
+													<li><a href="menu.html">浙菜</a></li> 
+													<li><a href="menu.html">湘菜</a></li> 
+													<li><a href="menu.html">徽菜</a></li> 
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>家常菜谱</h6> 
+													<li><a href="menu.html">面食</a></li>
+													<li><a href="menu.html">小吃</a></li> 
+													<li><a href="menu.html">小炒</a></li> 
+													<li><a href="menu.html">热菜</a></li> 
+													<li><a href="menu.html">汤羹</a></li> 
+													<li><a href="menu.html">煲粥</a></li> 
+													<li><a href="menu.html">甜点</a></li>
+													<li><a href="menu.html">凉拌</a></li>
+													<li><a href="menu.html">西餐</a></li>
+													<li><a href="menu.html">节日特色</a></li>
+												</ul>
+											</div> 
+											<div class="clearfix"></div>
+										</div>
+									</ul>
+								</li>
+								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">美食街区 <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="icons.html">社区论坛</a></li>
+										<li><a href="video.html">短视频</a></li>
+									</ul>
+								</li>  
+								<li><a href="about.html">关于我们</a></li> 
+
+								<li><a href="contact.html">意见反馈</a></li>
+							</ul>
+						</div>
+						<div class="cart cart box_1"> 
+							<form action="#" method="post" class="last"> 
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="display" value="1" />
+								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+							</form>   
+						</div> 
+				
+				
+		</nav>
+			<!-- //navigation --> 
+	
+	
+    <nav id="menu" class="navbar">
+		<div class="container">
+			<div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>
+			  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html"></i>甜品视频</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">小炒视频</a>
+						<div class="dropdown-menu">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="archive.html">炒面</a></li>
+									<li><a href="archive.html">炒饭</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">凉菜视频</a>
+						<div class="dropdown-menu">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="archive.html">凉拌青瓜</a></li>
+									<li><a href="archive.html">凉拌</a></li>
+									<li><a href="archive.html">Text 203</a></li>
+									<li><a href="archive.html">Text 204</a></li>
+									<li><a href="archive.html">Text 205</a></li>
+								</ul>
+							</div> 
+						</div>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">煮汤视频</a>
+						<div class="dropdown-menu" style="margin-left: -203.625px;">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="archive.html">Text 301</a></li>
+									<li><a href="archive.html">Text 302</a></li>
+									<li><a href="archive.html">Text 303</a></li>
+									<li><a href="archive.html">Text 304</a></li>
+									<li><a href="archive.html">Text 305</a></li>
+								</ul>
+								<ul class="list-unstyled">
+									<li><a href="archive.html">Text 306</a></li>
+									<li><a href="archive.html">Text 307</a></li>
+									<li><a href="archive.html">Text 308</a></li>
+									<li><a href="archive.html">Text 309</a></li>
+									<li><a href="archive.html">Text 310</a></li>
+								</ul>
+								<ul class="list-unstyled">
+									<li><a href="archive.html">Text 311</a></li>
+									<li><a href="archive.html">Text 312</a></li>
+									<li><a href="archive.html#">Text 313</a></li>
+									<li><a href="archive.html#">Text 314</a></li>
+									<li><a href="archive.html">Text 315</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="archive.html">热门视频</a></li>
+					
+					<li>
+						<form action="" method="post">
+							<input type="text" name="name" />
+							<input type="submit" value="搜索"/>
+						</form> 
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="header-slide">
+		<div id="owl-demo" class="owl-carousel">
+			<div class="item">
+				<div class="zoom-container">
+					<div class="zoom-caption">
+						<span>1</span>
+						<a href="/Recipe/video/videoplays/1">
+							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+						</a>
+						<p>红烧排骨</p>
+					</div>
+					<img src="/Recipe/static/assert/proimage/红烧排骨.jpg" />
+				</div>
+			</div>
+			<div class="item">
+				<div class="zoom-container">
+					<div class="zoom-caption">
+						<span>2</span>
+						<a href="/Recipe/video/videoplays/12">
+							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+						</a>
+						<p>可乐鸡翅</p>
+					</div>
+					<img src="/Recipe/static/assert/proimage/可乐鸡翅.jpg" />
+				</div>
+			</div>
+			<div class="item">
+				<div class="zoom-container">
+					<div class="zoom-caption">
+						<span>3</span>
+						<a href="/Recipe/video/videoplays/8">
+							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+						</a>
+						<p>土豆蒸排骨</p>
+					</div>
+					<img src="/Recipe/static/assert/proimage/土豆蒸排骨.jpg" />
+				</div>
+			</div>
+			<div class="item">
+				<div class="zoom-container">
+					<div class="zoom-caption">
+						<span>4</span>
+						<a href="/Recipe/video/videoplays/2">
+							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+						</a>
+						<p>小炒肉</p>
+					</div>
+					<img src="/Recipe/static/assert/proimage/小炒肉.jpg" />
+				</div>
+			</div>
+			<div class="item">
+				<div class="zoom-container">
+					<div class="zoom-caption">
+						<span>5</span>
+						<a href="/Recipe/video/videoplays/10">
+							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+						</a>
+						<p>椒盐大虾</p>
+					</div>
+					<img src="/Recipe/static/assert/proimage/椒盐大虾.jpg" />
+				</div>
+			</div>
+			<div class="item">
+				<div class="zoom-container">
+					<div class="zoom-caption">
+						<span>6</span>
+						<a href="/Recipe/video/videoplays/3">
+							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+						</a>
+						<p>清爽杂拌</p>
+					</div>
+					<img src="/Recipe/static/assert/proimage/清爽杂拌.jpg" />
+				</div>
+			</div>
+			<div class="item">
+				<div class="zoom-container">
+					<div class="zoom-caption">
+						<span>7</span>
+						<a href="/Recipe/video/videoplays/4">
+							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+						</a>
+						<p>糖醋排骨</p>
+					</div>
+					<img src="/Recipe/static/assert/proimage/糖醋排骨.jpg" />
+				</div>
+			</div>
+			<div class="item">
+				<div class="zoom-container">
+					<div class="zoom-caption">
+						<span>8</span>
+						<a href="/Recipe/video/videoplays/7">
+							<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+						</a>
+						<p>炒三素</p>
+					</div>
+					<img src="/Recipe/static/assert/proimage/炒三素.jpg" />
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- Header -->
+	
+	
+		
+	<!-- /////////////////////////////////////////Content -->
+	<div id="page-content" class="index-page">
+
+	
+		<div class="container">
+			
+			<div class="row">
+				
+				<div class="featured">
+					<h1>热门视频</h1>
+					<div class="main-vid">
+						<div class="col-md-6">
+		
+							<div class="zoom-container">
+
+								<img src="/Recipe/static/assert/proimage/红烧排骨.jpg" />
+                                	
+								<div class="zoom-caption">
+								
+									<span>1</span>
+									
+									<a href="/Recipe/video/videoplays/1"><!-- 要看的视频跳转路径-->
+										<i class="fa fa-play-circle-o fa-5x" ></i>
+									</a>
+									
+									<p>红烧排骨</p>
+								</div>
+								<div class="info">
+										<span style="color: red; font: 2px;">5:15</span> 
+											<span style="color: red;">1,200观看</span>	
+											
+										</div>
+							</div>
+							
+										
+						</div>
+					</div>
+					<div class="sub-vid">
+
+						<div class="col-md-3">
+							<div class="zoom-container">
+								<div class="zoom-caption">
+									<span>2</span>
+									<a href="/Recipe/video/videoplays/4">
+										<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+									</a>
+									<p>糖醋排骨</p>
+								</div>
+								<img src="/Recipe/static/assert/proimage/糖醋排骨.jpg" />
+								<div class="info">
+										<span style="color: red; font: 2px;">5:15</span> 
+											<span style="color: red;">1,200观看</span>	
+											
+										</div>
+							</div>
+							
+							<div class="zoom-container">
+								<div class="zoom-caption">
+									<span>3</span>
+									<a href="/Recipe/video/videoplays/10">
+										<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+									</a>
+									<p>椒盐大虾</p>
+								</div>
+								<img src="/Recipe/static/assert/proimage/椒盐大虾.jpg" />
+									<div class="info">
+										<span style="color: red; font: 2px;">5:15</span> 
+											<span style="color: red;">1,200观看</span>	
+											
+										</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="zoom-container">
+								<div class="zoom-caption">
+									<span>4</span>
+									<a href="/Recipe/video/videoplays/3">
+										<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+									</a>
+									<p>清爽杂拌</p>
+								</div>
+								<img src="/Recipe/static/assert/proimage/清爽杂拌.jpg" />
+									<div class="info">
+											<span style="color: red; font: 2px;">5:15</span> 
+												<span style="color: red;">1,200观看</span>	
+												
+											</div>
+							</div>
+							<div class="zoom-container">
+
+								<div class="zoom-caption">
+									<span>5</span>
+									<a href="/Recipe/video/videoplays/12">
+										<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+									</a>
+									<p>可乐鸡翅</p>
+								</div>
+								<img src="/Recipe/static/assert/proimage/可乐鸡翅.jpg" />
+									<div class="info">
+										<span style="color: red; font: 2px;">5:15</span> 
+											<span style="color: red;">1,200观看</span>	
+											
+										</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			
+			
+					
+					<div class="box">
+				      <h2>最新视频</h2>
+						
+						<div class="box-content">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="wrap-vid">
+
+										<div class="zoom-container">
+
+											<div class="zoom-caption">
+												<span>1</span>
+												<a href="/Recipe/video/videoplays/5">
+													<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+												</a>
+												<p>香酥炸带鱼</p>
+											</div>
+											<img src="/Recipe/static/assert/proimage/香酥炸带鱼.jpg" />
+										<div class="info">
+
+												    <span style="color: red; font: 2px;">5:15</span> 
+													<span style="color: red;">1,200观看</span>	
+												</div>
+										</div>
+										<h3 class="vid-name"><a href="#">香酥炸带鱼</a></h3>
+										<div class="info">
+											<h5>By <a href="#">作者</a></h5>
+											<span>上传时间：25/3/2015</span> 
+											
+									    </div>
+									</div>
+									<div class="wrap-vid">
+										<div class="zoom-container">
+
+											<div class="zoom-caption">
+												<span>2</span>
+												<a href="/Recipe/video/videoplays/11">
+													<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+												</a>
+												<p>香辣口水鸡</p>
+											</div>
+											<img src="/Recipe/static/assert/proimage/香辣口水鸡.jpg" />
+										<div class="info">
+
+												    <span style="color: red; font: 2px;">5:15</span> 
+													<span style="color: red;">1,200观看</span>	
+												</div>
+										</div>
+										<h3 class="vid-name"><a href="#">香辣口水鸡</a></h3>
+										<div class="info">
+											<h5>By <a href="#">作者</a></h5>
+											<span>上传时间：25/3/2015</span> 
+											
+									    </div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="wrap-vid">
+
+										<div class="zoom-container">
+											<div class="zoom-caption">
+												<span>3</span>
+												<a href="/Recipe/video/videoplays/9">
+													<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+												</a>
+												<p>腊肉粽子回锅</p>
+											</div>
+											<img src="/Recipe/static/assert/proimage/腊肉粽子回锅.jpg" />
+										<div class="info">
+
+												    <span style="color: red; font: 2px;">5:15</span> 
+													<span style="color: red;">1,200观看</span>	
+												</div>
+										</div>
+										<h3 class="vid-name"><a href="#">腊肉粽子回锅</a></h3>
+										<div class="info">
+											<h5>By <a href="#">作者</a></h5>
+											<span>上传时间：25/3/2015</span> 
+											
+									    </div>
+									</div>
+									<div class="wrap-vid">
+										<div class="zoom-container">
+											<div class="zoom-caption">
+												<span>4</span>
+												<a href="/Recipe/video/videoplays/13">
+													<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+												</a>
+												<p>炒鸡丝</p>
+											</div>
+											<img src="/Recipe/static/assert/proimage/炒鸡丝.jpg" />
+										<div class="info">
+
+												    <span style="color: red; font: 2px;">5:15</span> 
+													<span style="color: red;">1,200观看</span>	
+												</div>
+										</div>
+										<h3 class="vid-name"><a href="#">炒鸡丝</a></h3>
+										<div class="info">
+											<h5>By <a href="#">作者</a></h5>
+											<span>上传时间：25/3/2015</span> 
+											
+									    </div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="wrap-vid">
+
+										<div class="zoom-container">
+											<div class="zoom-caption">
+												<span>5</span>
+												<a href="/Recipe/video/videoplays/6">
+													<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+												</a>
+												<p>青椒土豆炒肉片</p>
+											</div>
+											<img src="/Recipe/static/assert/proimage/青椒土豆炒肉片.jpg" />
+										        <div class="info">
+
+												    <span style="color: red; font: 2px;">5:15</span> 
+													<span style="color: red;">1,200观看</span>	
+												</div>
+										</div>
+										<h3 class="vid-name"><a href="#">青椒土豆炒肉片</a></h3>
+										<div class="info">
+											<h5>By <a href="#">作者</a></h5>
+											<span>上传时间：25/3/2015</span> 
+											
+									    </div>
+									</div>
+									<div class="wrap-vid">
+
+										<div class="zoom-container">
+											<div class="zoom-caption">
+												<span>6</span>
+												<a href="/Recipe/video/videoplays/14">
+													<i class="fa fa-play-circle-o fa-5x" style="color: #fff"></i>
+												</a>
+												<p>豌豆炒西红柿</p>
+											</div>
+											<img src="/Recipe/static/assert/proimage/豌豆炒西红柿.jpg" />
+										<div class="info">
+
+												    <span style="color: red; font: 2px;">5:15</span> 
+													<span style="color: red;">1,200观看</span>	
+												</div>
+										</div>
+										<h3 class="vid-name"><a href="#">豌豆炒西红柿</a></h3>
+										<div class="info">
+											<h5>By <a href="#">作者</a></h5>
+											<span>上传时间：25/3/2015</span> 
+											
+									    </div>
+								</div>
+							</div>
+						</div>
+						<div class="line"></div>
+					</div>
+				
+						
+		
+		</div>
+		
+	</div>
+
+	<footer>
+		<div class="top-footer">
+			<ul class="footer-social list-inline">
+				<li><a href="#"><i class="fa fa-twitter"></i> <span>回到顶部</span></a></li>
+				<li><a href="#"><i class="fa fa-facebook"></i> <span>首页</span></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i> <span>11</span></a></li>
+				<li><a href="#"><i class="fa fa-youtube"></i> <span>22</span></a></li>
+				<li><a href="#"><i class="fa fa-vimeo-square"></i> <span>33</span></a></li>
+				<li><a href="#"><i class="fa fa-pinterest"></i> <span>44</span></a></li>
+				<li><a href="#"><i class="fa fa-rss"></i> <span>55</span></a></li>
+			</ul>  
+		</div>
+		
+		</div> 
+	</footer>
+	<!-- Footer -->
+	
+	<!-- JS -->
+	<script src="/Recipe/static/assert3/owl-carousel/owl.carousel.js"></script>
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+        autoPlay: 3000,
+        items : 5,
+        itemsDesktop : [1199,4],
+        itemsDesktopSmall : [979,4]
+      });
+
+    });
+    </script>
+	
+</body>
+</html>

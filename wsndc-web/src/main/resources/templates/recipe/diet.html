@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Careers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link th:href="@{/static/assert2/css/bootstrap.css}" type="text/css" rel="stylesheet" media="all">
+<link th:href="@{/static/assert2/css/style.css}" type="text/css" rel="stylesheet" media="all">
+<link th:href="@{/static/assert2/css/font-awesome.css}" rel="stylesheet"> <!-- font-awesome icons -->
+<!-- //Custom Theme files --> 
+<!-- js -->
+<script th:src="@{/static/assert2/js/jquery-2.2.3.min.js}"></script>
+<!-- //js -->
+<!-- web-fonts -->   
+<link href="http://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
+<link href="http://fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
+<!-- //web-fonts -->
+</head>
+<body> 
+	<!-- banner -->
+	<div class="banner about-w3bnr">
+		<!-- header -->
+		<div class="header">
+			<div class="w3ls-header"><!-- header-one --> 
+				<div class="container">
+					<div class="w3ls-header-left">
+						<p>开始你的美食之旅</p>
+					</div>
+					<div class="w3ls-header-right">
+						<ul> 
+							<li class="head-dpdn">
+								<i class="fa fa-phone" aria-hidden="true"></i> 联系我们: 13556510364 
+							</li> 
+							<li class="head-dpdn">
+								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> 登录</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> 注册</a>
+							</li> 
+							<!--<li class="head-dpdn">
+								<a href="offers.html"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
+							</li> -->
+							<li class="head-dpdn">
+								<a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i> 帮助</a>
+							</li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div> 
+				</div>
+			</div>
+			<!-- //header-one -->    
+			<!-- navigation -->
+			<div class="navigation agiletop-nav">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header w3l_logo">
+							<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>  
+							<h1><a href="index.html">我是你的“菜”<span>极致的美食体验</span></a></h1>
+						</div> 
+						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="index" class="active">主页</a></li>
+								<!-- Mega Menu -->
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">菜谱大全 <b class="caret"></b></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<div class="row">
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>一日三餐</h6>  
+													<li><a href="menu.html">早餐</a></li> 
+													<li><a href="menu.html">午餐</a></li> 
+													<li><a href="menu.html">晚餐</a></li>
+													<li><a href="menu.html">下午茶</a></li> 
+													<li><a href="menu.html">宵夜</a></li> 
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>八大菜系</h6> 
+													
+													<li><a href="menu.html">鲁菜</a></li> 
+													<li><a href="menu.html">川菜</a></li> 
+													<li><a href="menu.html">粤菜</a></li> 
+													<li><a href="menu.html">闽菜</a></li>
+													<li><a href="menu.html">苏菜</a></li> 
+													<li><a href="menu.html">浙菜</a></li> 
+													<li><a href="menu.html">湘菜</a></li> 
+													<li><a href="menu.html">徽菜</a></li> 
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>家常菜谱</h6> 
+													<li><a href="menu.html">面食</a></li>
+													<li><a href="menu.html">小吃</a></li> 
+													<li><a href="menu.html">小炒</a></li> 
+													<li><a href="menu.html">热菜</a></li> 
+													<li><a href="menu.html">汤羹</a></li> 
+													<li><a href="menu.html">煲粥</a></li> 
+													<li><a href="menu.html">甜点</a></li>
+													<li><a href="menu.html">凉拌</a></li>
+													<li><a href="menu.html">西餐</a></li>
+													<li><a href="menu.html">节日特色</a></li>
+												</ul>
+											</div> 
+											<div class="clearfix"></div>
+										</div>
+									</ul>
+								</li>
+								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">美食街区 <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="icons.html">社区论坛</a></li>
+										<li><a href="codes.html">短视频</a></li>     
+									</ul>
+								</li>  
+								<li><a href="about.html">关于我们</a></li> 
+
+								<li><a href="contact.html">意见反馈</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!-- //navigation --> 
+		</div>
+		<!-- //header-end --> 
+		<!-- banner-text -->
+		<div class="banner-text">	
+			<div class="container">
+				<h2>探索食物的独特风味 <br> <span>体验创造的快感</span></h2> 
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->    
+	<!-- breadcrumb -->  
+	<div class="container">	
+		<ol class="breadcrumb w3l-crumbs">
+			<li><a href="index"><i class="fa fa-home"></i> 首页</a></li>
+			<li class="active">食谱</li>
+		</ol>
+	</div>
+	<!-- //breadcrumb -->
+	<!-- careers-page -->
+	<div class="careers about">
+		<div class="container"> 
+			<h3 th:text="${recipe.rname}" style="font-family: '微软雅黑';"  class="w3ls-title w3ls-title1"></h3>
+			<img th:src="@{'/static/assert/proimage/'+${recipe.imagepath}+'.jpg'}" style="height: 300px;width: 400px;"/>
+			<br /><br />
+			<h5>描述</h5>
+			<p th:text="'“'+${recipe.description}+'”'"></p>
+			<div class="w3careers-row">
+				<h5>用料 :</h5>
+				<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>食材</th>
+								<th>数量</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="recing:${recing}">
+								<td th:text="${recing.ingredie.iname}"></td>
+								<!--<td><span class="badge">42</span></td>-->
+								<td><span th:text="${recing.dosis}"></span></td>
+							</tr>
+							<!--<tr>
+								<td><code>.badge-primary</code></td>
+								<td><span class="badge badge-primary">1</span></td>
+							</tr>
+							<tr>
+								<td><code>.badge-success</code></td>
+								<td><span class="badge badge-success">22</span></td>
+							</tr>
+							<tr>
+								<td><code>.badge-info</code></td>
+								<td><span class="badge badge-info">30</span></td>
+							</tr>
+							<tr>
+								<td><code>.badge-warning</code></td>
+								<td><span class="badge badge-warning">412</span></td>
+							</tr>
+							<tr>
+								<td><code>.badge-danger</code></td>
+								<td><span class="badge badge-danger">999</span></td>
+							</tr>-->
+						</tbody>
+					</table>                    
+				<div class="clearfix"> </div>
+			</div>
+			<div class="w3careers-row">
+				<h5>红烧排骨的做法 :</h5>
+				<br />
+				<div th:each="step:${steplist}">
+					<div class="col-md-12 w3careers-grids" >
+						<font style="font-family: arial;font-size: 50px;color: red;" th:text="${step.recipeOrder}+'.'"></font>
+						<!--<h6>1. </h6>-->
+						<img th:src="@{'/static/assert/proimage/'+${step.imagepath}+${step.recipeOrder}+'.jpg'}" style="top: 50px;width: 200px;height: 150px;"/>
+						<br /><br />
+						<p th:text="${step.process}"></p>
+						<br /><br />
+
+					</div>
+				</div>
+
+				<!--<div class="col-md-6 w3careers-grids">
+					<h6>2. NEW TRENDS</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+				</div>
+				<div class="col-md-6 w3careers-grids">
+					<h6>3. OPENNESS</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+				</div>
+				<div class="col-md-6 w3careers-grids">
+					<h6>4. OWNERSHIP</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+				</div>
+				<div class="col-md-6 w3careers-grids">
+					<h6>5. HONESTY</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+				</div>-->
+				<div class="clearfix"> </div>
+			</div>
+			<br /><br />
+			<h5>视频教学：</h5>
+			<br /><br />
+			<video width="100%" height="440" controls autoplay>
+				<source th:src="@{'/static/assert3/video/'+${recipe.rname}+'.ogg'}" type="video/ogg">
+				<source th:src="@{'/static/assert3/video/'+${recipe.rname}+'.mp4'}" type="video/mp4">
+				<source src="movie.webm" type="video/webm">
+				<object data="movie.mp4" width="100%" height="400">
+					<embed width="320" height="240" src="movie.swf">
+				</object>
+				<iframe width="100%" height="400" src="https://www.youtube.com/embed/ImMw_5byGmA" frameborder="0" allowfullscreen></iframe>
+			</video>
+		</div>
+	</div>
+	<!-- //careers-page -->  
+	<!-- subscribe -->
+	<div class="subscribe agileits-w3layouts"> 
+		<div class="container">
+			<div class="col-md-6 social-icons w3-agile-icons">
+				<h4>Keep in touch</h4>  
+				<ul>
+					<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
+					<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
+					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
+					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
+				</ul> 
+				<ul class="apps"> 
+					<li><h4>Download Our app : </h4> </li>
+					<li><a href="#" class="fa fa-apple"></a></li>
+					<li><a href="#" class="fa fa-windows"></a></li>
+					<li><a href="#" class="fa fa-android"></a></li>
+				</ul> 
+			</div> 
+			<div class="col-md-6 subscribe-right">
+				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
+				<form action="#" method="post"> 
+					<input type="email" name="email" placeholder="Enter your Email..." required="">
+					<input type="submit" value="Subscribe">
+					<div class="clearfix"> </div> 
+				</form>
+			</div>
+			<div class="clearfix"> </div> 
+		</div>
+	</div>
+	<!-- //subscribe --> 
+	<!-- footer -->
+	<div class="footer agileits-w3layouts">
+		<div class="container">
+			<div class="w3_footer_grids">
+				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
+					<h3>company</h3>
+					<ul>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="contact.html">Contact Us</a></li>  
+						<li><a href="diet.html">Careers</a></li>
+						<li><a href="help.html">Partner With Us</a></li>   
+					</ul>
+				</div> 
+				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
+					<h3>help</h3>
+					<ul>
+						<li><a href="faq.html">FAQ</a></li> 
+						<li><a href="login.html">Returns</a></li>   
+						<li><a href="login.html">Order Status</a></li> 
+						<li><a href="offers.html">Offers</a></li> 
+					</ul>  
+				</div>
+				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
+					<h3>policy info</h3>
+					<ul>  
+						<li><a href="terms.html">Terms & Conditions</a></li>  
+						<li><a href="privacy.html">Privacy Policy</a></li>
+						<li><a href="login.html">Return Policy</a></li> 
+					</ul>     
+				</div>
+				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
+					<h3>Menu</h3> 
+					<ul>
+						<li><a href="menu.html">All Day Menu</a></li> 
+						<li><a href="menu.html">Lunch</a></li>
+						<li><a href="menu.html">Dinner</a></li>
+						<li><a href="menu.html">Flavours</a></li> 
+					</ul>  
+				</div> 
+				<div class="clearfix"> </div>
+			</div>
+		</div> 
+	</div>
+	<div class="copyw3-agile"> 
+		<div class="container">
+			<p>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+		</div>
+	</div>
+	<!-- //footer -->
+	<!-- cart-js -->
+	<script src="js/minicart.js"></script>
+	<script>
+        w3ls.render();
+
+        w3ls.cart.on('w3sb_checkout', function (evt) {
+        	var items, len, i;
+
+        	if (this.subtotal() > 0) {
+        		items = this.items();
+
+        		for (i = 0, len = items.length; i < len; i++) { 
+        		}
+        	}
+        });
+    </script>  
+	<!-- //cart-js -->	
+	<!-- start-smooth-scrolling -->
+	<script th:src="@{/static/assert2/js/SmoothScroll.min.js}"></script>
+	<script type="text/javascript" th:src="@{/static/assert2/js/move-top.js}"></script>
+	<script type="text/javascript" th:src="@{/static/assert2/js/easing.js}"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+			
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+	<!-- //end-smooth-scrolling -->	  
+	<!-- smooth-scrolling-of-move-up -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			*/
+			
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+		});
+	</script>
+	<!-- //smooth-scrolling-of-move-up --> 
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script th:src="@{/static/assert2/js/bootstrap.js}"></script>
+</body>
+</html>

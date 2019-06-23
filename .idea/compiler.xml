@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wsndc-common" />
+        <module name="wsndc-cord" />
+        <module name="wsndc-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wsmdc-common" target="1.8" />
+      <module name="wsncd-common" target="1.8" />
+      <module name="wsndc" target="1.8" />
+      <module name="wsndc-base" target="1.8" />
+      <module name="wsndc-comment" target="1.8" />
+      <module name="wsndc-common" target="1.8" />
+      <module name="wsndc-cord" target="1.8" />
+      <module name="wsndc-dao" target="1.8" />
+      <module name="wsndc-manager" target="1.8" />
+      <module name="wsndc-service" target="1.8" />
+      <module name="wsndc-web" target="1.8" />
+      <module name="wsndctest" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="/Recipe/static/assert2/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="/Recipe/static/assert2/css/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="/Recipe/static/assert2/css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons -->
+<link rel="stylesheet" href="/Recipe/static/assert2/css/owl.carousel.css" type="text/css" media="all"/> <!-- Owl-Carousel-CSS -->
+<!-- //Custom Theme files --> 
+<!-- js -->
+<script src="/Recipe/static/assert2/js/jquery-2.2.3.min.js"></script>
+<!-- //js -->
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- web-fonts -->   
+<link href="http://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
+<link href="http://fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
+<!-- //web-fonts -->
+</head>
+<body> 
+	<!-- banner -->
+	<div class="banner">
+		<!-- header -->
+		<div class="header">
+			<div class="w3ls-header"><!-- header-one --> 
+				<div class="container">
+					<div class="w3ls-header-left">
+						<p>开始你的美食之旅</p>
+					</div>
+					<div class="w3ls-header-right">
+						<ul> 
+							<li class="head-dpdn">
+								<i class="fa fa-phone" aria-hidden="true"></i> 联系我们: 13556510364 
+							</li> 
+							<li class="head-dpdn">
+								<a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> 登录</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> 注册</a>
+							</li> 
+<!--							<li class="head-dpdn">
+								<a href="offers.html"><i class="fa fa-gift" aria-hidden="true"></i> 反馈</a>
+							</li> -->
+							<li class="head-dpdn">
+								<a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i> 帮助</a>
+							</li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div> 
+				</div>
+			</div>
+			<!-- //header-one -->    
+			<!-- navigation -->
+			<div class="navigation agiletop-nav">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header w3l_logo">
+							<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>  
+							<h1><a href="index.html">我是你的"菜"<span>极致的美食体验</span></a></h1>
+						</div> 
+						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="index" class="active">主页</a></li>
+								<!-- Mega Menu -->
+								<li class="dropdown">
+									<a th:href="@{/recipe}" class="dropdown-toggle" data-toggle="dropdown">菜谱大全 <b class="caret"></b></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<div class="row">
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>一日三餐</h6>  
+													<li><a href="menu.html">早餐</a></li> 
+													<li><a href="menu.html">午餐</a></li> 
+													<li><a href="menu.html">晚餐</a></li>
+													<li><a href="menu.html">下午茶</a></li> 
+													<li><a href="menu.html">宵夜</a></li> 
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>八大菜系</h6> 
+													
+													<li><a href="menu.html">鲁菜</a></li> 
+													<li><a href="menu.html">川菜</a></li> 
+													<li><a href="menu.html">粤菜</a></li> 
+													<li><a href="menu.html">闽菜</a></li>
+													<li><a href="menu.html">苏菜</a></li> 
+													<li><a href="menu.html">浙菜</a></li> 
+													<li><a href="menu.html">湘菜</a></li> 
+													<li><a href="menu.html">徽菜</a></li> 
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>家常菜谱</h6> 
+													<li><a href="menu.html">面食</a></li>
+													<li><a href="menu.html">小吃</a></li> 
+													<li><a href="menu.html">小炒</a></li> 
+													<li><a href="menu.html">热菜</a></li> 
+													<li><a href="menu.html">汤羹</a></li> 
+													<li><a href="menu.html">煲粥</a></li> 
+													<li><a href="menu.html">甜点</a></li>
+													<li><a href="menu.html">凉拌</a></li>
+													<li><a href="menu.html">西餐</a></li>
+													<li><a href="menu.html">节日特色</a></li>
+												</ul>
+											</div> 
+											<div class="clearfix"></div>
+										</div>
+									</ul>
+								</li>
+								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">美食街区 <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="/Recipe/video/videoindex">美食社区</a></li>
+										<li><a href="/Recipe/video/videolist">短视频</a></li>
+									</ul>
+								</li>  
+								<li><a href="#">关于我们</a></li>
+
+								<li><a href="#">意见反馈</a></li>
+							</ul>
+						</div>
+						<div class="cart cart box_1"> 
+							<form action="#" method="post" class="last"> 
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="display" value="1" />
+								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+							</form>   
+						</div> 
+					</nav>
+				</div>
+			</div>
+			<!-- //navigation --> 
+		</div>
+		<!-- //header-end --> 
+		<!-- banner-text -->
+		<div class="banner-text">	
+			<div class="container">
+				<h2>探索食物的独特风味 <br> <span>体验创造的快感</span></h2>
+				<div class="agileits_search">
+					<form th:action="@{/recipe/search}" method="post">
+						<input id="searchInfo" name="Search" type="text" placeholder="想吃啥找啥" required="">
+						<select id="agileinfo_search" name="agileinfo_search" required="">
+							<option value="">菜名</option>
+							<option value="navs">菜系</option>
+							<option value="quotes">食材</option>	
+							<option value="videos">其他</option>
+						</select>
+						<input onclick="search_sb()" type="submit" value="搜索">
+					</form>
+				</div>
+				<script>
+					function search_sb() {
+                        window.location.href="/Recipe/recipe/search/"+$("#searchInfo").val();
+                    }
+				</script>
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->   
+	<!-- add-products -->
+	<div class="add-products">  
+		<div class="container">
+
+			<div class="add-products-row">
+				<div class="w3ls-add-grids">
+					<a th:href="@{/recipespag(pn=1)}">
+						<h4>菜谱 <span><br>大全</span></h4>
+						<h5>网罗天下美食</h5>
+						<h6>立即探索 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+					</a>
+				</div>
+				<div class="w3ls-add-grids w3ls-add-grids-right">
+					<a href="/Recipe/video/videoindex">
+						<h4>美食 <span><br>小街</span></h4>
+						<h5>属于你的美食奇遇</h5>
+						<h6>立即进入 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+					</a>
+				</div> 
+				<div class="w3ls-add-grids w3ls-add-grids-right">
+					<a href="/Recipe/video/videolist">
+						<h4>美食 <span><br>街拍</span></h4>
+						<h5>展示你的多彩美食生活</h5>
+						<h6>即刻出发 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+					</a>
+				</div> 
+				<div class="clearfix"> </div> 
+			</div>  	 
+		</div>
+	</div>
+
+	<!-- dishes -->
+	<div class="w3agile-spldishes">
+		<div class="container">
+			<h3 class="w3ls-title">美食推荐</h3>
+			<div class="spldishes-agileinfo">
+				<div class="col-md-3 spldishes-w3left">
+					<h5 class="w3ltitle">我是你的"菜"</h5>
+					<p>  不同的心境适合不同的美食，你此刻的心境如何呢(*^_^*)!快与我们分享把~                                                                </p>
+				</div> 
+				<div class="col-md-9 spldishes-grids">
+					<!-- Owl-Carousel -->
+					<div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
+						<a href="management/userlist.html" class="item g1">
+							<img class="lazyOwl" src="/Recipe/static/assert2/images/g1.jpg" title="Our latest gallery" alt=""/>
+							<div class="agile-dish-caption">
+								<h4>Duis congue</h4>
+								<span>Neque porro quisquam est qui dolorem </span>
+							</div>
+						</a>
+						<a href="/Recipe/management/userlist.html" class="item g1">
+							<img class="lazyOwl" src="/Recipe/static/assert2/images/g2.jpg" title="Our latest gallery" alt=""/>
+							<div class="agile-dish-caption">
+								<h4>Duis congue</h4>
+								<span>Neque porro quisquam est qui dolorem </span>
+							</div>
+						</a>
+						<a href="/Recipe/management/userlist.html" class="item g1">
+							<img class="lazyOwl" src="/Recipe/static/assert2/images/g3.jpg" title="Our latest gallery" alt=""/>
+							<div class="agile-dish-caption">
+								<h4>Duis congue</h4>
+								<span>Neque porro quisquam est qui dolorem </span>
+							</div>
+						</a>
+						<a href="/Recipe/management/userlist.html" class="item g1">
+							<img class="lazyOwl" src="/Recipe/static/assert2/images/g4.jpg" title="Our latest gallery" alt=""/>
+							<div class="agile-dish-caption">
+								<h4>Duis congue</h4>
+								<span>Neque porro quisquam est qui dolorem </span>
+							</div>
+						</a>
+						<a href="/Recipe/management/userlist.html" class="item g1">
+							<img class="lazyOwl" src="/Recipe/static/assert2/images/g5.jpg" alt=""/>
+							<div class="agile-dish-caption">
+								<h4>Duis congue</h4>
+								<span>Neque porro quisquam est qui dolorem </span>
+							</div>
+						</a> 
+						<a href="/Recipe/management/userlist.html" class="item g1">
+							<img class="lazyOwl" src="/static/assert2/images/g1.jpg" title="Our latest gallery" alt=""/>
+							<div class="agile-dish-caption">
+								<h4>Duis congue</h4>
+								<span>Neque porro quisquam est qui dolorem </span>
+							</div>
+						</a>
+						<a href="/Recipe/management/userlist.html" class="item g1">
+							<img class="lazyOwl" src="/Recipe/static/assert2/images/g2.jpg" title="Our latest gallery" alt=""/>
+							<div class="agile-dish-caption">
+								<h4>Duis congue</h4>
+								<span>Neque porro quisquam est qui dolorem </span>
+							</div>
+						</a>
+						<a href="management/userlist.html" class="item g1">
+							<img class="lazyOwl" src="/Recipe/static/assert2/images/g3.jpg" title="Our latest gallery" alt=""/>
+							<div class="agile-dish-caption">
+								<h4>Duis congue</h4>
+								<span>Neque porro quisquam est qui dolorem </span>
+							</div>
+						</a>
+					</div> 
+				</div>  
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //dishes --> 
+	<!-- subscribe -->
+	<div class="subscribe agileits-w3layouts"> 
+		<div class="container">
+			<div class="col-md-6 social-icons w3-agile-icons">
+				<h4>Keep in touch</h4>  
+				<ul>
+					<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
+					<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
+					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
+					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
+				</ul> 
+				<ul class="apps"> 
+					<li><h4>Download Our app : </h4> </li>
+					<li><a href="#" class="fa fa-apple"></a></li>
+					<li><a href="#" class="fa fa-windows"></a></li>
+					<li><a href="#" class="fa fa-android"></a></li>
+				</ul> 
+			</div> 
+			<div class="col-md-6 subscribe-right">
+				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
+				<form action="#" method="post"> 
+					<input type="email" name="email" placeholder="Enter your Email..." required="">
+					<input type="submit" value="Subscribe">
+					<div class="clearfix"> </div> 
+				</form>
+			</div>
+			<div class="clearfix"> </div> 
+		</div>
+	</div>
+	<!-- //subscribe --> 
+	<!-- footer -->
+	<div class="footer agileits-w3layouts">
+		<div class="container">
+			<div class="w3_footer_grids">
+				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
+					<h3>company</h3>
+					<ul>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="contact.html">Contact Us</a></li>  
+						<li><a href="careers.html">Careers</a></li>  
+						<li><a href="help.html">Partner With Us</a></li>   
+					</ul>
+				</div> 
+				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
+					<h3>help</h3>
+					<ul>
+						<li><a href="faq.html">FAQ</a></li> 
+						<li><a href="login.html">Returns</a></li>   
+						<li><a href="login.html">Order Status</a></li> 
+						<li><a href="offers.html">Offers</a></li> 
+					</ul>  
+				</div>
+				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
+					<h3>policy info</h3>
+					<ul>  
+						<li><a href="terms.html">Terms & Conditions</a></li>  
+						<li><a href="privacy.html">Privacy Policy</a></li>
+						<li><a href="login.html">Return Policy</a></li> 
+					</ul>   
+				</div>
+				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
+					<h3>Menu</h3> 
+					<ul>
+						<li><a href="menu.html">All Day Menu</a></li> 
+						<li><a href="menu.html">Lunch</a></li>
+						<li><a href="menu.html">Dinner</a></li>
+						<li><a href="menu.html">Flavours</a></li> 
+					</ul>  
+				</div> 
+				<div class="clearfix"> </div>
+			</div>
+		</div> 
+	</div>
+	<div class="copyw3-agile"> 
+		<div class="container">
+			<p>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+		</div>
+	</div>
+	<!-- //footer --> 
+	<!-- cart-js -->
+	<script src="/Recipe/static/assert2/js/minicart.js"></script>
+	<script>
+        w3ls.render();
+
+        w3ls.cart.on('w3sb_checkout', function (evt) {
+        	var items, len, i;
+
+        	if (this.subtotal() > 0) {
+        		items = this.items();
+
+        		for (i = 0, len = items.length; i < len; i++) { 
+        		}
+        	}
+        });
+    </script>  
+	<!-- //cart-js -->	
+	<!-- Owl-Carousel-JavaScript -->
+	<script src="/Recipe/static/assert2/js/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#owl-demo").owlCarousel ({
+				items : 3,
+				lazyLoad : true,
+				autoPlay : true,
+				pagination : true,
+			});
+		});
+	</script>
+	<!-- //Owl-Carousel-JavaScript -->  
+	<!-- start-smooth-scrolling -->
+	<script src="/Recipe/static/assert2/js/SmoothScroll.min.js"></script>
+	<script type="text/javascript" src="/Recipe/static/assert2/js/move-top.js"></script>
+	<script type="text/javascript" src="/Recipe/static/assert2/js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+			
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+	<!-- //end-smooth-scrolling -->	  
+	<!-- smooth-scrolling-of-move-up -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			*/
+			
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+		});
+	</script>
+	<!-- //smooth-scrolling-of-move-up --> 
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/Recipe/static/assert2/js/bootstrap.js"></script>
+</body>
+</html>

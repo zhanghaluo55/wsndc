@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>H+ 后台主题UI框架 - Bootstrap Table</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Recipe/static/assert/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Recipe/static/assert/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/Recipe/static/assert/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/Recipe/static/assert/css/animate.css" rel="stylesheet">
+    <link href="/Recipe/static/assert/css/style.css?v=4.1.0" rel="stylesheet">
+
+
+    <script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+    <style>
+
+        .file-list {
+            height: 125px;
+            display: none;
+            list-style-type: none;
+        }
+
+        .file-list img {
+            max-width: 70px;
+            vertical-align: middle;
+        }
+
+        .file-list .file-item {
+            margin-bottom: 10px;
+            float: left;
+            margin-left: 20px;
+        }
+
+
+        .file-list .file-item .file-del {
+            display: block;
+            margin-left: 20px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="ibox float-e-margins">
+
+            <div class="col-sm-12">
+                <!-- Example Pagination -->
+                <div class="example-wrap">
+                    <div  class="form-inline row">
+
+                        <div class="col-sm-3 col-md-offset-5 input-group">
+                            <input type="text" placeholder="输入搜索内容" name="search" class="form-control input-lg">
+                            <div class="input-group-btn">
+                                <button class="btn btn-lg btn-primary" type="submit">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>搜索
+                                </button>
+                            </div>
+                        </div>
+                        <a data-toggle="modal" class="btn btn-primary" href="#modal-form">添加菜谱</a>
+                        <button type="button" class="btn btn-primary">删除菜谱</button>
+                    <h4 class="example-title">用户列表</h4>
+                    <div class="example">
+                        </div>
+                        <table id="exampleTablePagination" data-toggle="table" data-url="/js/demo/bootstrap_table_test.json" data-query-params="queryParams" data-mobile-responsive="true" data-height="550" data-pagination="true" data-icon-size="outline" data-search="false">
+                            <thead>
+                                <tr>
+                                   <!-- <th data-field="state" data-checkbox="true"></th>
+                                    <th data-field="id">ID</th>
+                                    <th data-field="image">封面</th>
+                                    <th data-field="title">标题</th>
+                                    <th data-field="content">正文内容</th>
+                                    <th data-field="viewtime">浏览次数</th>
+                                    <th data-field="collecttime">收藏次数</th>
+                                    <th data-field="city">所在城市</th>
+                                    <th data-field="address">攻略介绍地点</th>
+                                    <th data-field="work">操作</th>-->
+                                    <th data-field="state" data-checkbox="true"></th>
+                                    <th>序号</th>
+                                    <th>菜谱名</th>
+                                    <th>菜谱图</th>
+                                    <th>描述</th>
+                                    <th>步骤</th>
+                                    <th>原料</th>
+                                    <th>编辑</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="recipe:${recipes}">
+                                    <td ></td>
+                                    <td th:text="${recipe.id}"></td>
+                                    <td th:text="${recipe.rname}"></td>
+                                    <td>
+                                            <img style="width: 200px;height: 150px;" th:src="@{'/static/assert/proimage/'+${recipe.imagepath}+'.jpg'}"/>
+                                    </td>
+                                    <td th:text="${recipe.description}"></td>
+                                    <td><a th:href="@{'/step/edit/'+${recipe.id}}">点击编辑</a></td>
+                                    <td><a th:href="@{/management/ingredieadd}">点击编辑</a></td>
+
+                                    <td>
+                                        <a data-toggle="modal" href="#modal-form2" th:onclick="'javascript:toEdit('+${recipe.id}+');'">编辑</a>&nbsp;&nbsp;
+                                        <a th:onclick="'javascript:delete_user('+${recipe.id}+');'" id="delete_btn">删除</a>
+                                        <form method="post" id="deleteUser">
+                                            <input type="hidden" name="_method" value="delete" />
+                                        </form>
+                                        <script>
+                                            function delete_user(id){
+
+                                                var a=$("#delete_btn").attr("delete_uri");
+
+                                                $("#deleteUser").attr("action","/recipe/"+id).submit();
+                                                return false;
+                                            }
+
+                                        </script>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <!-- End Example Pagination -->
+            </div>
+    </div>
+        <!-- End Panel Other -->
+    </div>
+
+
+
+    <!--添加模态框-->
+    <div id="modal-form" class="modal fade" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <h3 class="m-t-none m-b">添加菜谱</h3>
+                            <p>请输入用户信息(⊙o⊙)</p>
+
+                            <form role="form" th:action="@{/recipe}" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label>菜谱名：</label>
+                                    <input name="rname" type="text" placeholder="请输入菜谱名" class="form-control" val="">
+                                </div>
+                                <div class="form-group">
+                                    <label>封面：</label>
+                                    <p>
+                                        <input type="file" name="file" id="choose-file" multiple="multiple">
+                                        <!--<input type="file" name="" id="choose-file" />-->
+                                    </p>
+                                    <p><ul class="file-list "></ul></p>
+                                    <!--<input name="password" type="password" placeholder="请输入密码" class="form-control" val="">-->
+                                </div>
+                                <div class="form-group">
+                                    <label>描述：</label>
+                                    <textarea name="description"  rows="3"  type="text" placeholder="菜谱描述" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>步骤：</label>
+                                    <!--<a data-toggle="modal" class="btn btn-primary" href="#modal-form3">添加菜谱</a>-->
+                                    <p>需在步骤编辑页面添加步骤</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>原料：</label>
+                                    <p>需在原料编辑页面添加原料</p>
+
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>保存</strong>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nestable List -->
+    <script src="/static/assert/js/plugins/nestable/jquery.nestable.js"></script>
+    <script>
+        $('#nestable').nestable({
+            group: 1
+        }).on('change', updateOutput);
+
+        // activate Nestable for list 2
+        $('#nestable2').nestable({
+            group: 1
+        }).on('change', updateOutput);
+
+        // output initial serialised data
+        updateOutput($('#nestable').data('output', $('#nestable-output')));
+        updateOutput($('#nestable2').data('output', $('#nestable2-output')));
+
+        $('#nestable-menu').on('click', function (e) {
+            var target = $(e.target),
+                action = target.data('action');
+            if (action === 'expand-all') {
+                $('.dd').nestable('expandAll');
+            }
+            if (action === 'collapse-all') {
+                $('.dd').nestable('collapseAll');
+            }
+        });
+    </script>
+    <!--修改模态框-->
+    <div id="modal-form2" class="modal fade" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <h3 class="m-t-none m-b">编辑菜谱</h3>
+
+                            <p>请修改菜谱信息(⊙o⊙)</p>
+
+                            <form role="form" th:action="@{/recipe}" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="_method" value="put"/>
+                                   <!-- <input type="hidden" name="id" th:value="${user.id}">-->
+                                <div class="form-group">
+                                    <label>序号：</label>
+                                    <input id="id_update_input" readonly="readonly" name="id" type="text"  class="form-control"  val="">
+                                </div>
+                                <div class="form-group">
+                                    <label>菜谱名：</label>
+                                    <input id="rname_update_input" name="username" type="text"  class="form-control" val="">
+                                </div>
+                                <div class="form-group">
+                                    <label>封面：</label>
+                                    <input name="file" type="file" id="choose-file" multiple="multiple"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>描述：</label>
+                                    <textarea id="description_update_input" name="description"  rows="3"  type="text" placeholder="菜谱描述" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>步骤：</label>
+                                    <a data-toggle="modal" class="btn btn-primary" href="#modal-form4">添加步骤</a>
+                                </div>
+                                <div class="form-group">
+                                    <label>原料：</label>
+
+                                </div>
+                                <div>
+                                    <button id="edit_btn" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>完成</strong>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--步骤模态框-->
+    <div id="modal-form3" class="modal fade" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div id="divv_step" class="col-sm-10">
+                            <h3 class="m-t-none m-b">菜谱制作步骤</h3>
+                            <a  onclick="step_add()" id="add_step" class="btn btn-primary" >添加步骤</a>
+                            <p>请填写步骤信息(⊙o⊙)</p>
+                            <label>步骤序号：</label>
+                            <input type="text" name="id" class="form-control" readonly="true" value="1"/>
+                            <label>步骤描述：</label>
+                            <textarea id="description_step_input" name="description"  rows="3"  type="text" placeholder="菜谱描述" class="form-control"></textarea>
+                            <label>步骤图片：</label>
+                            <input type="file" name="imagePath" id="choose-file" multiple="multiple"/>
+                            <!--<form role="form" th:action="@{/user}" method="post">-->
+                                <!--<input type="hidden" name="_method" value="put"/>-->
+                                <!--&lt;!&ndash; <input type="hidden" name="id" th:value="${user.id}">&ndash;&gt;-->
+                                <!--<div class="form-group">-->
+                                    <!--<label>序号：</label>-->
+                                    <!--<input id="id_update_input" readonly="readonly" name="id" type="text"  class="form-control"  val="">-->
+                                <!--</div>-->
+                            <!--</form>-->
+                            <script>
+                                var i = 2;
+                                var s1="步骤序号";var s2="步骤描述";var s3="步骤图片";
+                                var label1=$("<label></label>").append(s1);
+                                var label2=$("<label></label>").append(s2);
+                                var label3=$("<label></label>").append(s3);
+                                var input1=$("<input type='text' name='id' class='form-control' readonly='true' value='i'/>");
+                                var input2=$("<textarea  name='description'  rows='3'  type='text' placeholder='菜谱描述' class='form-control'></textarea>");
+                                var input3=$("<input type='file' name='imagePath' id='choose-file' multiple='multiple'/>");
+
+                                function step_add(){
+                                    $("#divv_step").append(label1).append(input1).append(label2).append(input2).append(label3).append(input3)
+                                    i++;
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+/*        function toEdit(id){
+            $.ajax({
+                url: "/recipe/"+id,
+                type: "GET",
+                success:  function(result){
+                    var recipe=result.recipe;
+
+                    $("#id_update_input").val(id);
+                    $("#rname_update_input").val(recipe.rname);
+                    $("#description_update_input").val(recipe.description);
+
+                }
+            })
+        }*/
+
+    </script>
+    <!-- 全局js -->
+    <script src="/Recipe/static/assert/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/Recipe/static/assert/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- 自定义js -->
+    <script src="/Recipe/static/assert/js/content.js?v=1.0.0"></script>
+
+    <script src="/Recipe/static/assert/layer/layer.js"></script>
+
+    <!-- Bootstrap table -->
+    <script src="/Recipe/static/assert/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="/Recipe/static/assert/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="/Recipe/static/assert/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="/Recipe/static/assert/js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- Peity -->
+    <script src="/Recipe/static/assert/js/demo/bootstrap-table-demo.js"></script>
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+    <!--统计代码，可删除-->
+
+</body>
+
+</html>

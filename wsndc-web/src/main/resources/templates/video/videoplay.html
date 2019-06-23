@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>KoolTube</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/Recipe/static/assert3/css/bootstrap.min.css"  type="text/css">
+	
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="/Recipe/static/assert3/css/style.css">
+	
+	<!-- Owl Carousel Assets -->
+    <link href="/Recipe/static/assert3/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="/Recipe/static/assert3/owl-carousel/owl.theme.css" rel="stylesheet">
+	
+	<!-- Custom Fonts -->
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+	<!-- jQuery and Modernizr-->
+	<script src="/Recipe/static/assert3/js/jquery-2.1.1.js"></script>
+	
+	<!-- Core JavaScript Files -->  	 
+    <script src="/Recipe/static/assert3/js/bootstrap.min.js"></script>
+	
+</head>
+
+<body>
+<header>
+	<!--Top-->
+	<nav style="background: url(images/1.jpg) no-repeat center">
+	<div  style="background: rgba(64, 68, 105, 0.54);padding:  0.8em 0;">
+	
+			<div class="container" >
+			<div class="row">
+				
+		<div class="w3ls-header-left">
+						<p>开始你的美食之旅</p>
+			</div>
+					<div class="w3ls-header-right">
+						<ul> 
+							<li class="head-dpdn" style="color: #fff;">
+								<i class="fa fa-phone" aria-hidden="true" ></i> 联系我们: 13556510364 
+							</li> 
+							<li class="head-dpdn">
+								<a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> 登录</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> 注册</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i> 帮助</a>
+							</li>
+						</ul>
+					</div>
+			</div>
+	</div>
+	</div>
+	<!--Navigation-->
+
+	<div class="navbar navbar-default" style="background: rgba(253, 70, 62, 0.84);">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header w3l_logo">
+							<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>  
+							<h1><a href="/Recipe/index.html">我是你的"菜"<span>极致的美食体验</span></a></h1>
+						</div> 
+						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="/Recipe/index.html" class="active">主页</a></li>
+								<!-- Mega Menu -->
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">菜谱大全 <b class="caret"></b></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<div class="row">
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>一日三餐</h6>  
+													<li><a href="menu.html">早餐</a></li> 
+													<li><a href="menu.html">午餐</a></li> 
+													<li><a href="menu.html">晚餐</a></li>
+													<li><a href="menu.html">下午茶</a></li> 
+													<li><a href="menu.html">宵夜</a></li> 
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>八大菜系</h6> 
+													
+													<li><a href="menu.html">鲁菜</a></li> 
+													<li><a href="menu.html">川菜</a></li> 
+													<li><a href="menu.html">粤菜</a></li> 
+													<li><a href="menu.html">闽菜</a></li>
+													<li><a href="menu.html">苏菜</a></li> 
+													<li><a href="menu.html">浙菜</a></li> 
+													<li><a href="menu.html">湘菜</a></li> 
+													<li><a href="menu.html">徽菜</a></li> 
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>家常菜谱</h6> 
+													<li><a href="menu.html">面食</a></li>
+													<li><a href="menu.html">小吃</a></li> 
+													<li><a href="menu.html">小炒</a></li> 
+													<li><a href="menu.html">热菜</a></li> 
+													<li><a href="menu.html">汤羹</a></li> 
+													<li><a href="menu.html">煲粥</a></li> 
+													<li><a href="menu.html">甜点</a></li>
+													<li><a href="menu.html">凉拌</a></li>
+													<li><a href="menu.html">西餐</a></li>
+													<li><a href="menu.html">节日特色</a></li>
+												</ul>
+											</div> 
+											<div class="clearfix"></div>
+										</div>
+									</ul>
+								</li>
+								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">美食街区 <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="icons.html">社区论坛</a></li>
+										<li><a href="video.html">短视频</a></li>     
+									</ul>
+								</li>  
+								<li><a href="about.html">关于我们</a></li> 
+
+								<li><a href="contact.html">意见反馈</a></li>
+							</ul>
+						</div>
+						<div class="cart cart box_1"> 
+							<form action="#" method="post" class="last"> 
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="display" value="1" />
+								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+							</form>   
+						</div> 
+				
+				
+		</nav>
+	
+	
+	<!--Navigation-->
+
+</header>
+<!-- Header -->
+	
+	<!-- /////////////////////////////////////////Content -->
+	<hr />
+	<div id="page-content" class="single-page">
+		<div class="container">
+			<div class="row">
+				
+
+					<div class="wrap-vid">
+
+                    <video width="100%" height="440" controls autoplay>
+						  <source th:src="@{'/static/assert3/video/'+${video.title}+'.ogg'}" type="video/ogg">
+						  <source th:src="@{'/static/assert3/video/'+${video.title}+'.mp4'}" type="video/mp4">
+						  <source src="movie.webm" type="video/webm">
+							  <object data="movie.mp4" width="100%" height="400">
+							    <embed width="320" height="240" src="movie.swf">
+		                      </object> 
+						<iframe width="100%" height="400" src="https://www.youtube.com/embed/ImMw_5byGmA" frameborder="0" allowfullscreen></iframe>
+					</video>
+					 
+					</div>
+					<div class="share">
+      
+                   
+						<ul class="list-inline center">
+							<li><a href="#" class="btn btn-facebook"><i class="fa fa-facebook"></i>分享</a></li>
+							<li><a href="#" class="btn btn-twitter"><i class="fa fa-twitter"></i> 收藏</a></li>
+							
+							<li><a href="#" class="btn btn-google"><i class="fa fa-google-plus-square"></i> 下载</a></li>
+							<li><a href="#" class="btn btn-mail"><i class="fa fa-envelope-o"></i> 点赞</a></li>
+						</ul>
+					</div>
+					<div class="line"></div>
+					
+					<h1 class="vid-name"><a href="#">作者</a></h1>
+					<div class="info">
+						<h5>By <a href="#">Kelvin</a></h5>
+						<span>粉丝数<i class="fa fa-calendar"></i>2,015</span> 
+						<span>播放量<i class="fa fa-heart"></i>1,200</span>
+						<span><a href="#" class="btn btn-pinterest"><i class="fa fa-pinterest"></i> 关注</a></span>
+					</div>
+					<div id="">
+						
+					
+					<h4>视频简介：</h4>
+					<span th:text="${video.introduce}">
+
+					</span>
+					
+					<!--<h5>材料清单：</h5>
+					<span>
+						鸭、桂圆、
+					</span>
+					<h5>小技巧：</h5>
+					<span>
+
+					</span>-->
+					<p style="margin-top: 20px">Aenean fe
+						
+						
+									
+					</p>
+					</div>
+					<hr />
+					<div id="">
+						
+					
+					<h4>评论区</h4>
+					<p style="margin-top: 20px">
+
+		
+					</p>
+					
+						<div id="">
+							<a href="#"></a>
+						</div>
+						
+			
+					<div class="line"></div>
+					<div class="comment">
+						<h3>Leave A Comment</h3>
+						<form name="form1" method="post" action="">
+							
+							<div class="row">
+								
+									<div class="form-group">
+										<textarea name="message" id="message" class="form-control" rows="1" cols="25" required="required"
+										placeholder="填写你的想法..."></textarea>
+									</div>						
+									<button type="submit" class="btn btn-4 btn-block" name="btnSend" id="btnSend" style="color: blue;">
+								评论</button>
+								
+							</div>
+						</form>
+					</div>
+					</div>
+					<div class="line"></div>
+					
+				
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="top-footer">
+			<ul class="footer-social list-inline">
+				<li><a href="#"><i class="fa fa-twitter"></i> <span>回到顶部</span></a></li>
+				<li><a href="#"><i class="fa fa-facebook"></i> <span>首页</span></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i> <span>11</span></a></li>
+				<li><a href="#"><i class="fa fa-youtube"></i> <span>22</span></a></li>
+				<li><a href="#"><i class="fa fa-vimeo-square"></i> <span>33</span></a></li>
+				<li><a href="#"><i class="fa fa-pinterest"></i> <span>44</span></a></li>
+				<li><a href="#"><i class="fa fa-rss"></i> <span>55</span></a></li>
+			</ul>  
+		</div>
+		
+		
+			
+		</div> 
+	</footer>
+	<!-- Footer -->
+	
+	<!-- JS -->
+	<script src="/Recipe/static/assert3owl-carousel/owl.carousel.js"></script>
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+        autoPlay: 3000,
+        items : 5,
+        itemsDesktop : [1199,4],
+        itemsDesktopSmall : [979,4]
+      });
+
+    });
+    </script>
+	
+</body>
+</html>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wsndc.core.mapper.RecipingredieMapper" >
+  <resultMap id="BaseResultMap" type="com.wsndc.core.bean.Recipingredie" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="rid" property="rid" jdbcType="INTEGER" />
+    <result column="iid" property="iid" jdbcType="INTEGER" />
+    <result column="dosis" property="dosis" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="WithRecipingredieResultMap" type="com.wsndc.core.bean.Recipingredie">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="dosis" jdbcType="VARCHAR" property="dosis" />
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="iid" jdbcType="INTEGER" property="iid" />
+    <association property="recipe" javaType="com.wsndc.core.bean.Recipe">
+      <id column="id" property="id"/>
+      <result column="rname" property="rname"/>
+    </association>
+    <association property="ingredie" javaType="com.wsndc.core.bean.Ingredie">
+      <id column="id" property="id"/>
+      <result column="iname" property="iname"/>
+      <result column="description" property="description"/>
+    </association>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, rid, iid, dosis
+  </sql>
+  <sql id="WithRecipingredie_Column_List">
+    k.id,k.rid,k.iid,k.dosis,r.id,r.rname,i.id,i.iname,i.description
+  </sql>
+  <select id="selectByExampleWithRecipingredie" resultMap="WithRecipingredieResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="WithRecipingredie_Column_List" />
+    from recipe_ingredie k
+    left join recipe r on k.rid=r.id
+    left join ingredie i on k.iid=i.id
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKeyWithRecipingredieExample" resultMap="WithRecipingredieResultMap">
+    select
+    <include refid="WithRecipingredie_Column_List" />
+    from recipe_ingredie k
+    left join recipe r on k.rid=r.id
+    left join ingredie i on k.iid=i.id
+    where rid=1
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wsndc.core.bean.RecipingredieExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from recipe_ingredie
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from recipe_ingredie
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from recipe_ingredie
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wsndc.core.bean.RecipingredieExample" >
+    delete from recipe_ingredie
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wsndc.core.bean.Recipingredie" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into recipe_ingredie (rid, iid, dosis
+      )
+    values (#{rid,jdbcType=INTEGER}, #{iid,jdbcType=INTEGER}, #{dosis,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wsndc.core.bean.Recipingredie" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into recipe_ingredie
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rid != null" >
+        rid,
+      </if>
+      <if test="iid != null" >
+        iid,
+      </if>
+      <if test="dosis != null" >
+        dosis,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rid != null" >
+        #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="iid != null" >
+        #{iid,jdbcType=INTEGER},
+      </if>
+      <if test="dosis != null" >
+        #{dosis,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wsndc.core.bean.RecipingredieExample" resultType="java.lang.Integer" >
+    select count(*) from recipe_ingredie
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update recipe_ingredie
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.rid != null" >
+        rid = #{record.rid,jdbcType=INTEGER},
+      </if>
+      <if test="record.iid != null" >
+        iid = #{record.iid,jdbcType=INTEGER},
+      </if>
+      <if test="record.dosis != null" >
+        dosis = #{record.dosis,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update recipe_ingredie
+    set id = #{record.id,jdbcType=INTEGER},
+      rid = #{record.rid,jdbcType=INTEGER},
+      iid = #{record.iid,jdbcType=INTEGER},
+      dosis = #{record.dosis,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wsndc.core.bean.Recipingredie" >
+    update recipe_ingredie
+    <set >
+      <if test="rid != null" >
+        rid = #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="iid != null" >
+        iid = #{iid,jdbcType=INTEGER},
+      </if>
+      <if test="dosis != null" >
+        dosis = #{dosis,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wsndc.core.bean.Recipingredie" >
+    update recipe_ingredie
+    set rid = #{rid,jdbcType=INTEGER},
+      iid = #{iid,jdbcType=INTEGER},
+      dosis = #{dosis,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

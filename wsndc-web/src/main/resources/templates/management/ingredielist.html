@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>H+ 后台主题UI框架 - Bootstrap Table</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/static/assert/css/bootstrap.min.css?v=3.3.6" rel="stylesheet" th:href="@{/static/assert/css/bootstrap.min.css?v=3.3.6}">
+    <link href="/static/assert/css/font-awesome.css?v=4.4.0" rel="stylesheet" th:href="@{/static/assert/css/font-awesome.min.css?v=4.4.0}">
+    <link href="/static/assert/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" th:href="@{/static/assert/css/plugins/bootstrap-table/bootstrap-table.min.css}">
+    <link href="/static/assert/css/animate.css" rel="stylesheet" th:href="@{/static/assert/css/animate.css}">
+    <link href="/static/assert/css/style.css?v=4.1.0" rel="stylesheet" th:href="@{/static/assert/css/style.css?v=4.1.0}">
+
+
+    <script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+
+</head>
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+
+        <div class="col-sm-12">
+            <!-- Example Pagination -->
+            <div class="example-wrap">
+                <div  class="form-inline row">
+
+                    <div class="col-sm-3 col-md-offset-5 input-group">
+                        <input type="text" placeholder="输入搜索内容" name="ingrediesearch" class="form-control input-lg">
+                        <div class="input-group-btn">
+                            <button class="btn btn-lg btn-primary" type="submit">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>搜索
+                            </button>
+                        </div>
+                    </div>
+                    <a data-toggle="modal" class="btn btn-primary" href="#modal-form">添加食材</a>
+                    <button type="button" class="btn btn-primary">删除食材</button>
+                    <h4 class="example-title">食材列表</h4>
+                    <div class="example">
+                    </div>
+                    <table id="exampleTablePagination" data-toggle="table" data-url="/js/demo/bootstrap_table_test.json" data-query-params="queryParams" data-mobile-responsive="true" data-height="600" data-pagination="true" data-icon-size="outline" data-search="false">
+                        <thead>
+                        <tr>
+                            <!-- <th data-field="state" data-checkbox="true"></th>
+                             <th data-field="id">ID</th>
+                             <th data-field="image">封面</th>
+                             <th data-field="title">标题</th>
+                             <th data-field="content">正文内容</th>
+                             <th data-field="viewtime">浏览次数</th>
+                             <th data-field="collecttime">收藏次数</th>
+                             <th data-field="city">所在城市</th>
+                             <th data-field="address">攻略介绍地点</th>
+                             <th data-field="work">操作</th>-->
+                            <th data-field="state" data-checkbox="true"></th>
+                            <th>序号</th>
+                            <th>食材名称</th>
+                            <th>食材图片</th>
+                            <th>食材类型</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="ingredie:${ingredies}">
+                            <td ></td>
+                            <td th:text="${ingredie.id}"></td>
+                            <td th:text="${ingredie.iname}"></td>
+                            <td th:text="${ingredie.imagepath}"></td>
+                            <td th:text="${ingredie.description}"></td>
+
+                            <!--日期格式化-->
+                            <!--<td th:text="${#dates.format(xx,'yyyy-MM-dd')}"></td>-->
+                            <td>
+                                <!--<a data-toggle="modal" href="#modal-form2" th:onclick="'javascript:toEdit('+${ingredie.id}+');'">编辑</a>&nbsp;&nbsp;-->
+                                <a th:onclick="'javascript:delete_video('+${ingredie.id}+');'" id="delete_btn">删除</a>
+                                <form method="post" id="deleteVideo">
+                                    <input type="hidden" name="_method" value="delete" />
+                                </form>
+                                <script>
+                                    function delete_video(id){
+
+                                        $("#deleteVideo").attr("action","/ingredie/"+id).submit();
+                                        return false;
+                                    }
+
+                                </script>
+                            </td>
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+            <!-- End Example Pagination -->
+        </div>
+    </div>
+    <!-- End Panel Other -->
+</div>
+
+
+<!--添加模态框-->
+<div id="modal-form" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h3 class="m-t-none m-b">添加食材</h3>
+
+                        <p>请输入食材信息(⊙o⊙)</p>
+
+                        <form role="form" th:action="@{/ingredie}" method="post">
+                            <div class="form-group">
+                                <label>食材名称：</label>
+                                <input name="iname" type="text" placeholder="请输入食材名称" class="form-control" val="">
+                            </div>
+                            <!--<div class="form-group">-->
+                                <!--<label>食材图片：</label>-->
+                                <!--<input name="imagePath" type="text" placeholder="食材图片" class="form-control" val="">-->
+                            <!--</div>-->
+                            <div class="form-group">
+                                <label >食材类型：</label>
+                                <select class="form-control m-b" name="description">
+                                    <option>肉类</option>
+                                    <option>蔬果类</option>
+                                    <option>辅料</option>
+                                    <option>调味料</option>
+                                </select>
+                                <!--<textarea name="description"  rows="3"  type="text" placeholder="食材描述" class="form-control"/>-->
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>保存</strong>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--修改模态框-->
+<div id="modal-form2" class="modal fade" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h3 class="m-t-none m-b">编辑食材</h3>
+
+                        <p>请修改视频信息(⊙o⊙)</p>
+
+                        <form role="form" th:action="@{/upIngredie}" method="post">
+                            <input type="hidden" name="_method" value="put"/>
+                            <!-- <input type="hidden" name="id" th:value="${user.id}">-->
+                            <div class="form-group">
+                                <label>序号：</label>
+                                <input id="id_update_input" readonly="readonly" name="id" type="text"  class="form-control"  val="">
+                            </div>
+
+                            <div class="form-group">
+                                <label>食材名称：</label>
+                                <input id="iname_update_input" name="iname" type="text"  class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>食材图片：</label>
+                                <input id="imagePath_update_input" name="imagePath" type="text"  class="form-control" val="">
+                            </div>
+                            <div class="form-group">
+                                <label>食材类型：</label>
+                                <input id="description_update_input" name="dascription" type="text" class="form-control">
+                            </div>
+
+                            <div>
+                                <button id="edit_btn" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>完成</strong>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function toEdit(id){
+        $.ajax({
+            url: "/Recipe/ingredie/"+id,
+            type: "GET",
+            success:  function(result){
+                var ingredie=result.ingredie;
+
+                $("#id_update_input").val(id);
+                $("#iname_update_input").val(ingredie.iname);
+                $("#desc_update_input").val(ingredie.description);
+
+            }
+        })
+    }
+
+</script>
+<!-- 全局js -->
+<script src="/Recipe/static/assert/js/jquery.min.js?v=2.1.4"></script>
+<script src="/Recipe/static/assert/js/bootstrap.min.js?v=3.3.6"></script>
+
+<!-- 自定义js -->
+<script src="/Recipe/static/assert/js/content.js?v=1.0.0"></script>
+
+
+<!-- Bootstrap table -->
+<script src="/Recipe/static/assert/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/Recipe/static/assert/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/Recipe/static/assert/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<!-- iCheck -->
+<script src="/Recipe/static/assert/js/plugins/iCheck/icheck.min.js"></script>
+
+<!-- Peity -->
+<script src="/Recipe/static/assert/js/demo/bootstrap-table-demo.js"></script>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<!--统计代码，可删除-->
+
+</body>
+
+</html>
